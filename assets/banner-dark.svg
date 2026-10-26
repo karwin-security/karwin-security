@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 280" width="1200" height="280" role="img" aria-label="Karwin — Systems Administration, Automation, Offensive Security">
+  <defs>
+    <style>
+      .sans { font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+      .mono { font-family: "JetBrains Mono", "SFMono-Regular", Menlo, Consolas, "Liberation Mono", monospace; }
+      .edge { stroke-dasharray: 160; stroke-dashoffset: 160; animation: draw 1.2s ease-out forwards; }
+      .path { stroke-dasharray: 420; stroke-dashoffset: 420; animation: draw 1.8s cubic-bezier(.6,0,.2,1) 1.4s forwards; }
+      .fade { opacity: 0; animation: fade .8s ease-out forwards; }
+      .d1 { animation-delay: .1s; } .d2 { animation-delay: .35s; } .d3 { animation-delay: .6s; }
+      .e1 { animation-delay: .3s; } .e2 { animation-delay: .5s; } .e3 { animation-delay: .7s; } .e4 { animation-delay: .9s; }
+      .target { animation-delay: 3.1s; }
+      @keyframes draw { to { stroke-dashoffset: 0; } }
+      @keyframes fade { to { opacity: 1; } }
+    </style>
+  </defs>
+
+  <rect width="1200" height="280" fill="#0a0a0a"/>
+  <rect x="0.5" y="0.5" width="1199" height="279" fill="none" stroke="#262626"/>
+
+  <text x="64" y="72" class="mono fade d1" font-size="13" letter-spacing="2.5" fill="#737373">GITHUB / KARWIN-SECURITY</text>
+  <text x="60" y="160" class="sans fade d2" font-size="76" font-weight="700" letter-spacing="-3" fill="#fafafa">Karwin</text>
+  <text x="64" y="204" class="sans fade d3" font-size="21" fill="#a3a3a3">Systems Administration  ·  Automation  ·  Offensive Security</text>
+
+  <line x1="64" y1="236" x2="1136" y2="236" stroke="#262626"/>
+  <text x="64" y="258" class="mono fade d3" font-size="12" letter-spacing="1.5" fill="#737373">CATALUNYA, SPAIN</text>
+  <text x="1136" y="258" class="mono fade d3" font-size="12" letter-spacing="1.5" fill="#737373" text-anchor="end">CURRENTLY: HTB CPTS</text>
+
+  <!-- network topology -->
+  <g fill="none" stroke="#3f3f3f" stroke-width="1.2" stroke-linecap="round">
+    <path class="edge e1" d="M776 128 H858"/>
+    <path class="edge e1" d="M870 128 H946"/>
+    <path class="edge e2" d="M950 128 L1036 66"/>
+    <path class="edge e2" d="M950 128 H1036"/>
+    <path class="edge e2" d="M950 128 L1036 190"/>
+    <path class="edge e3" d="M1040 64 L1116 40"/>
+    <path class="edge e3" d="M1040 64 L1116 90"/>
+    <path class="edge e3" d="M1040 128 L1116 128"/>
+    <path class="edge e4" d="M1040 192 L1116 166"/>
+    <path class="edge e4" d="M1040 192 L1116 212"/>
+    <path class="edge e4" d="M1116 90 V128" stroke-dasharray="2 5"/>
+  </g>
+
+  <!-- highlighted path: entry → firewall → core → segment → host -->
+  <path class="path" fill="none" stroke="#fafafa" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+    d="M776 128 H950 L1040 192 L1116 212"/>
+
+  <!-- nodes -->
+  <g class="fade e1">
+    <circle cx="772" cy="128" r="5" fill="#0a0a0a" stroke="#fafafa" stroke-width="1.5"/>
+    <rect x="858" y="122" width="12" height="12" fill="#0a0a0a" stroke="#fafafa" stroke-width="1.5"/>
+    <text x="772" y="110" class="mono" font-size="10" letter-spacing="1" fill="#737373" text-anchor="middle">WAN</text>
+    <text x="864" y="110" class="mono" font-size="10" letter-spacing="1" fill="#737373" text-anchor="middle">FW</text>
+  </g>
+  <g class="fade e2">
+    <circle cx="950" cy="128" r="6" fill="#fafafa"/>
+    <text x="950" y="110" class="mono" font-size="10" letter-spacing="1" fill="#737373" text-anchor="middle">CORE</text>
+  </g>
+  <g class="fade e3" fill="#0a0a0a" stroke="#a3a3a3" stroke-width="1.3">
+    <circle cx="1040" cy="64" r="4.5"/>
+    <circle cx="1040" cy="128" r="4.5"/>
+    <circle cx="1040" cy="192" r="4.5" stroke="#fafafa"/>
+  </g>
+  <g class="fade e4" fill="#a3a3a3">
+    <circle cx="1118" cy="40" r="3"/>
+    <circle cx="1118" cy="90" r="3"/>
+    <circle cx="1118" cy="128" r="3"/>
+    <circle cx="1118" cy="166" r="3"/>
+  </g>
+
+  <!-- target host -->
+  <g class="fade target">
+    <circle cx="1118" cy="212" r="3.5" fill="#fafafa"/>
+    <circle cx="1118" cy="212" r="10" fill="none" stroke="#fafafa" stroke-width="1.2"/>
+    <path d="M1118 196 V200 M1118 224 V228 M1102 212 H1106 M1130 212 H1134" stroke="#fafafa" stroke-width="1.2" stroke-linecap="round"/>
+  </g>
+</svg>
