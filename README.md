@@ -56,53 +56,61 @@ offensive security skill set to move into penetration testing and red team work.
   </tr>
 </table>
 
-<details>
-<summary><b>Architecture — IT incident workflow</b></summary>
-<br>
+### How these systems fit together
 
-```mermaid
-%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#0a0a0a", "primaryTextColor": "#fafafa", "primaryBorderColor": "#737373", "lineColor": "#737373", "fontFamily": "ui-monospace, SFMono-Regular, Menlo, monospace"}}}%%
-flowchart LR
-    A[Incident report] --> B[Power Automate]
-    B --> C[AI Builder<br/>classification]
-    C --> D[(SharePoint<br/>incident log)]
-    C --> E[Teams<br/>responsible channel]
-```
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/flows-dark.svg">
+  <img src="./assets/flows-light.svg" alt="Animated architecture flows for the four systems above" width="100%">
+</picture>
 
-</details>
+<br><br>
 
-<details>
-<summary><b>Architecture — Self-hosted n8n</b></summary>
-<br>
+## Dashboard — network inventory
 
-```mermaid
-%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#0a0a0a", "primaryTextColor": "#fafafa", "primaryBorderColor": "#737373", "lineColor": "#737373", "fontFamily": "ui-monospace, SFMono-Regular, Menlo, monospace"}}}%%
-flowchart LR
-    U[Client] --> CF[Cloudflare<br/>Zero Trust]
-    CF --> T[cloudflared<br/>tunnel]
-    T --> N[n8n]
-    N --> P[(PostgreSQL)]
-    P --> BK[Encrypted<br/>backups]
-```
+A single-file web app I built to replace spreadsheets for tracking every device on the network.
+Live overview with drill-down charts, a searchable device table and network tooling, all backed by one data file.
 
-</details>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/dashboard-dark.svg">
+  <img src="./assets/dashboard-light.svg" alt="Network inventory dashboard mockup with demo data" width="100%">
+</picture>
 
-<details>
-<summary><b>Architecture — KRW Pulse pipeline</b></summary>
-<br>
+<table>
+  <tr>
+    <td width="33%" valign="top">
+      <b>Inventory</b><br>
+      <sub>
+      Per-device record: IP, MAC, VLAN, category, building, rack, switch + port, wall jack, uplink, owner<br>
+      No duplicate IP or name on entry<br>
+      Incomplete-record queue + export<br>
+      Per-building or consolidated view<br>
+      Photos auto-converted to WebP
+      </sub>
+    </td>
+    <td width="33%" valign="top">
+      <b>Network tools</b><br>
+      <sub>
+      VLAN table + free-IP finder<br>
+      IP checker and next-free suggestion<br>
+      Subnet calculator with VLSM plan<br>
+      View by switch / by port<br>
+      Visual topology with zoom
+      </sub>
+    </td>
+    <td width="33%" valign="top">
+      <b>Data & reporting</b><br>
+      <sub>
+      Donut stats with click-through drill-down<br>
+      Bulk actions: re-VLAN, export selection<br>
+      Material orders with priority + tracking<br>
+      Per-device technical sheet (PDF)<br>
+      Import / export PDF · CSV · JSON
+      </sub>
+    </td>
+  </tr>
+</table>
 
-```mermaid
-%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#0a0a0a", "primaryTextColor": "#fafafa", "primaryBorderColor": "#737373", "lineColor": "#737373", "fontFamily": "ui-monospace, SFMono-Regular, Menlo, monospace"}}}%%
-flowchart LR
-    R[RSS feeds] --> N[n8n]
-    N --> J[Jina AI<br/>extraction]
-    J --> G[Gemini<br/>processing]
-    G --> TG[Telegram]
-    G --> M[Email]
-    KV[(Cloudflare KV<br/>subscribers)] --> M
-```
-
-</details>
+<sub>Scale: ~450 devices across 6 buildings. Dark theme, responsive, formal register, no telemetry. Mockup shows demo data.</sub>
 
 <br>
 
@@ -152,11 +160,11 @@ flowchart LR
 
 <br>
 
-## Activity
+## Skill radar
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/karwin-security/karwin-security/output/snake-dark.svg">
-  <img src="https://raw.githubusercontent.com/karwin-security/karwin-security/output/snake-light.svg" alt="Contribution graph animation" width="100%">
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/radar-dark.svg">
+  <img src="./assets/radar-light.svg" alt="Skill radar grouped by operational, training and next-up skills" width="100%">
 </picture>
 
 <br>
