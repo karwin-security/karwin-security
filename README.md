@@ -65,52 +65,53 @@ offensive security skill set to move into penetration testing and red team work.
 
 <br><br>
 
-## Dashboard — network inventory
+## Dashboard — internal IT platform
 
-A single-file web app I built to replace spreadsheets for tracking every device on the network.
-Live overview with drill-down charts, a searchable device table and network tooling, all backed by one data file.
+The internal IT tool I built for a hotel group. It replaces spreadsheets, emails and scattered notes
+with one place for inventory, a helpdesk, network monitoring and the day-to-day running of the team.
+Two doors: staff report faults through a simple no-login portal, IT works from a full panel behind 2FA.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/dashboard-dark.svg">
-  <img src="./assets/dashboard-light.svg" alt="Network inventory dashboard mockup with demo data" width="100%">
+  <img src="./assets/dashboard-light.svg" alt="Internal IT platform dashboard with demo data" width="100%">
 </picture>
 
 <table>
   <tr>
     <td width="33%" valign="top">
-      <b>Inventory</b><br>
+      <b>Inventory & monitoring</b><br>
       <sub>
-      Per-device record: IP, MAC, VLAN, category, building, rack, switch + port, wall jack, uplink, owner<br>
-      No duplicate IP or name on entry<br>
-      Incomplete-record queue + export<br>
-      Per-building or consolidated view<br>
-      Photos auto-converted to WebP
+      Every device — PCs, POS, switches, routers, cameras, radio links, printers, UPS<br>
+      IP, MAC, VLAN, hotel, building, location, owner, state<br>
+      Automatic ping status (responding / down / unchecked)<br>
+      Search operators: <code>vlan:40</code>, <code>estado:!activo</code><br>
+      Incomplete-record queue + per-building view
       </sub>
     </td>
     <td width="33%" valign="top">
-      <b>Network tools</b><br>
+      <b>Helpdesk</b><br>
       <sub>
-      VLAN table + free-IP finder<br>
-      IP checker and next-free suggestion<br>
-      Subnet calculator with VLSM plan<br>
-      View by switch / by port<br>
-      Visual topology with zoom
+      Staff incident portal, no login required<br>
+      AI assistant or direct form, with self-fix tips<br>
+      Full ticket lifecycle (INC-0042 → resolved)<br>
+      Priorities, states and email acknowledgements<br>
+      IT sees new incidents in the panel instantly
       </sub>
     </td>
     <td width="33%" valign="top">
-      <b>Data & reporting</b><br>
+      <b>Tools & organization</b><br>
       <sub>
-      Donut stats with click-through drill-down<br>
-      Bulk actions: re-VLAN, export selection<br>
-      Material orders with priority + tracking<br>
-      Per-device technical sheet (PDF)<br>
-      Import / export PDF · CSV · JSON
+      Network topology: switches, uplinks, radio links<br>
+      Subnet calculator + VLSM, VLAN table, free-IP map<br>
+      Material orders and daily work logs<br>
+      Multi-hotel, accounts with roles + mandatory 2FA<br>
+      Import / export PDF · CSV · JSON, demo mode
       </sub>
     </td>
   </tr>
 </table>
 
-<sub>Scale: ~450 devices across 6 buildings. Dark theme, responsive, formal register, no telemetry. Mockup shows demo data.</sub>
+<sub>Scale: ~450 devices across several hotels. Dark theme, responsive, formal register, no telemetry. Mockup shows demo data.</sub>
 
 <br>
 
